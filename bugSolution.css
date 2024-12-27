@@ -1,0 +1,17 @@
+The solution involves understanding and adjusting the CSS rules to achieve the intended styling. In the provided example, if we wish to style paragraphs within divs using a green color, the more specific selector must be removed or modified. If the intention is to apply the style to all paragraphs within the div element, use the following:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green;
+}
+```
+
+By removing or modifying the direct child selector rule, the styles will now cascade as intended.  Always consider the specificity of CSS selectors when designing styles to avoid unexpected behavior.
