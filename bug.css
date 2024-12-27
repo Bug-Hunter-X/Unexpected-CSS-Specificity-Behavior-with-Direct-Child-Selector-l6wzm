@@ -1,0 +1,23 @@
+The following CSS code snippet exhibits an uncommon error related to specificity and inheritance:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green; /* This rule is overridden */
+}
+
+div > p {
+  color: purple; /* This rule takes precedence */
+}
+```
+
+The issue lies in understanding the specificity of CSS selectors. While `div p` targets paragraphs within divs, `div > p` targets only *direct* children.  The `> `  is the direct child selector, this rule is far more specific due to the direct-child selector than the first, therefore it overrides `div p` even though it appears later.
+
+This can be confusing if one expects the last rule to apply when inheritance and general selectors are applied in such a way that the rule is overridden without clear visual indication of why.
